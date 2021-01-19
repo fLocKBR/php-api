@@ -35,8 +35,7 @@
 
             if ($this->_toCache == true) {
                 header('Cache-control: max-age=60');
-            }
-            else {
+            } else {
                 header('Cache-control: no-cache, no-store');
             }
 
@@ -46,8 +45,7 @@
                 $this->_responseData['sucess'] = false;
                 $this->addMessage("Response creation error");
                 $this->_responseData['messages'] = $this->_messages;
-            }
-            else {
+            } else {
                 http_response_code($this->_httpStatusCode);
                 $this->_responseData['statusCode'] = $this->_httpStatusCode;
                 $this->_responseData['success'] = $this->_success;
